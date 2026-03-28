@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CASE FILE // Intracranial Hemorrhage</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- SCAN LINE OVERLAY -->
+<div class="scanlines"></div>
+<div class="noise-overlay"></div>
+
+<!-- ═══ NAV ═══ -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <span class="nav-bracket">[</span>
+    <span class="nav-title">ICH//FORENSICS</span>
+    <span class="nav-bracket">]</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#overview">OVERVIEW</a></li>
+    <li><a href="#evidence">EVIDENCE</a></li>
+    <li><a href="#analysis">ANALYSIS</a></li>
+    <li><a href="#conclusion">CONCLUSION</a></li>
+  </ul>
+  <div class="nav-status">
+    <span class="status-dot"></span>
+    <span class="status-text">CASE ACTIVE</span>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-content">
+    <div class="case-stamp">
+      <span>CLASSIFIED</span>
+      <span>MEDICAL FORENSICS DIVISION</span>
+    </div>
+    <div class="scan-loader" id="scanLoader">
+      <div class="scan-bar"></div>
+      <p class="scan-text">INITIALIZING CASE FILE...</p>
+    </div>
+    <div class="hero-text" id="heroText" style="display:none;">
+      <p class="hero-eyebrow">▸ FORENSIC CASE FILE #ICH-2024-001</p>
+      <h1 class="hero-title">
+        <span class="title-line">INTRACRANIAL</span>
+        <span class="title-line accent">HEMORRHAGE</span>
+      </h1>
+      <p class="hero-sub">SCAN. ANALYZE. CONCLUDE.</p>
+      <div class="hero-divider">
+        <span>──────</span>
+        <span class="hex">0x4943 48</span>
+        <span>──────</span>
+      </div>
+      <p class="hero-desc">
+        Evidence catalog for radiological analysis of intracranial bleeding subtypes.
+        All CT scan imagery classified under Emergency Imaging Protocol.
+      </p>
+      <a href="#overview" class="cta-btn">
+        <span>OPEN CASE FILE</span>
+        <span class="btn-arrow">▶</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Fingerprint SVG -->
+  <div class="fingerprint-wrap" id="fingerprintWrap">
+    <svg class="fingerprint-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <g class="fp-lines" stroke="#ff2222" stroke-width="0.8" fill="none" opacity="0.35">
+        <ellipse cx="100" cy="100" rx="8" ry="10"/>
+        <ellipse cx="100" cy="100" rx="16" ry="20"/>
+        <ellipse cx="100" cy="100" rx="24" ry="30"/>
+        <ellipse cx="100" cy="100" rx="32" ry="42"/>
+        <ellipse cx="100" cy="100" rx="40" ry="54"/>
+        <ellipse cx="100" cy="100" rx="48" ry="66"/>
+        <ellipse cx="100" cy="100" rx="56" ry="78"/>
+        <ellipse cx="100" cy="100" rx="64" ry="88"/>
+        <ellipse cx="100" cy="100" rx="72" ry="95"/>
+        <ellipse cx="100" cy="100" rx="80" ry="99"/>
+      </g>
+      <circle cx="100" cy="100" r="3" fill="#ff2222" opacity="0.9"/>
+      <line x1="100" y1="40" x2="100" y2="60" stroke="#ff2222" stroke-width="1" opacity="0.6"/>
+      <line x1="100" y1="140" x2="100" y2="160" stroke="#ff2222" stroke-width="1" opacity="0.6"/>
+    </svg>
+    <p class="fp-label">BIOMETRIC SCAN IN PROGRESS</p>
+  </div>
+</section>
+
+<!-- ═══ CASE OVERVIEW ═══ -->
+<section id="overview" class="section">
+  <div class="section-header">
+    <div class="section-tag">SECTION 01</div>
+    <h2 class="section-title">CASE <span class="accent">OVERVIEW</span></h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="overview-grid">
+    <div class="overview-card" data-delay="0">
+      <div class="card-icon">⬡</div>
+      <h3>DEFINITION</h3>
+      <p>Intracranial hemorrhage (ICH) refers to any bleeding within the cranial vault — including the brain parenchyma, ventricles, and surrounding meningeal spaces. It constitutes a neurosurgical emergency demanding rapid radiological classification.</p>
+    </div>
+    <div class="overview-card" data-delay="100">
+      <div class="card-icon">◈</div>
+      <h3>ETIOLOGY</h3>
+      <p>Primary causes include hypertensive vessel rupture, trauma, aneurysmal rupture, arteriovenous malformations (AVM), coagulopathy, and hemorrhagic transformation of ischemic infarction. Mechanism determines subtype classification.</p>
+    </div>
+    <div class="overview-card" data-delay="200">
+      <div class="card-icon">◉</div>
+      <h3>PATHOPHYSIOLOGY</h3>
+      <p>Extravasated blood creates a hyperdense collection on non-contrast CT within 1–3 hours. Hematoma expansion occurs in 30–40% of patients within the first 24 hours, correlating with neurological deterioration.</p>
+    </div>
+    <div class="overview-card" data-delay="300">
+      <div class="card-icon">⬢</div>
+      <h3>CLINICAL URGENCY</h3>
+      <p>Mortality ranges from 35–52% at 30 days depending on GCS score, hemorrhage volume, location, and IVH extension. The 30-day "spot sign" on CTA predicts hematoma growth with high specificity.</p>
+    </div>
+  </div>
+
+  <div class="anatomy-strip">
+    <div class="anatomy-label">ANATOMICAL LAYERS</div>
+    <div class="layers-bar">
+      <div class="layer" style="--c:#888;">SKULL</div>
+      <div class="layer layer-epi" style="--c:#e05c00;">EPIDURAL ▸ Between dura & skull</div>
+      <div class="layer" style="--c:#8b3a3a;">DURA MATER</div>
+      <div class="layer layer-sub" style="--c:#c0392b;">SUBDURAL ▸ Dura → Arachnoid</div>
+      <div class="layer" style="--c:#5b4a8a;">ARACHNOID</div>
+      <div class="layer layer-sah" style="--c:#d35400;">SAH ▸ Arachnoid → Pia</div>
+      <div class="layer" style="--c:#2e7d9c;">PIA MATER</div>
+      <div class="layer layer-ich" style="--c:#922b21;">INTRAPARENCHYMAL ▸ Brain Tissue</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EVIDENCE GALLERY ═══ -->
+<section id="evidence" class="section">
+  <div class="section-header">
+    <div class="section-tag">SECTION 02</div>
+    <h2 class="section-title">EVIDENCE <span class="accent">GALLERY</span></h2>
+    <div class="section-line"></div>
+  </div>
+  <p class="section-desc">Radiological exhibits catalogued under Chain of Custody Protocol. All images obtained via non-contrast CT head.</p>
+
+  <div class="evidence-grid" id="evidenceGrid">
+
+    <!-- Evidence 01 -->
+    <div class="evidence-card" data-id="01" data-category="ANATOMY REFERENCE">
+      <div class="ev-header">
+        <span class="ev-number">EXHIBIT #01</span>
+        <span class="ev-status ev-classified">CLASSIFIED</span>
+      </div>
+      <div class="ev-image-wrap" onclick="openModal(0)">
+        <div class="ev-scan-effect"></div>
+        <img src="img/page1.jpg" alt="Intracranial Hemorrhage Anatomy" loading="lazy"/>
+        <div class="ev-overlay">
+          <span class="zoom-icon">⊕ EXAMINE</span>
+        </div>
+        <div class="ev-corner tl"></div>
+        <div class="ev-corner tr"></div>
+        <div class="ev-corner bl"></div>
+        <div class="ev-corner br"></div>
+      </div>
+      <div class="ev-meta">
+        <div class="ev-title">HEMORRHAGE CLASSIFICATION MAP</div>
+        <div class="ev-tags">
+          <span class="tag">ANATOMY</span>
+          <span class="tag">OVERVIEW</span>
+          <span class="tag">EDUCATIONAL</span>
+        </div>
+        <div class="ev-coords">
+          <span>LAT: 48.2082° N</span>
+          <span>LONG: 16.3738° E</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Evidence 02 -->
+    <div class="evidence-card" data-id="02" data-category="CT IMAGING">
+      <div class="ev-header">
+        <span class="ev-number">EXHIBIT #02</span>
+        <span class="ev-status ev-critical">CRITICAL</span>
+      </div>
+      <div class="ev-image-wrap" onclick="openModal(1)">
+        <div class="ev-scan-effect"></div>
+        <img src="img/page2.jpg" alt="Non-traumatic Brain Hemorrhage CT" loading="lazy"/>
+        <div class="ev-overlay">
+          <span class="zoom-icon">⊕ EXAMINE</span>
+        </div>
+        <div class="ev-corner tl"></div>
+        <div class="ev-corner tr"></div>
+        <div class="ev-corner bl"></div>
+        <div class="ev-corner br"></div>
+      </div>
+      <div class="ev-meta">
+        <div class="ev-title">NON-TRAUMATIC CT VARIANTS</div>
+        <div class="ev-tags">
+          <span class="tag">CT HEAD</span>
+          <span class="tag">NON-TRAUMATIC</span>
+          <span class="tag">EMERGENCY</span>
+        </div>
+        <div class="ev-coords">
+          <span>SERIES: ICH-NTR-004</span>
+          <span>WINDOW: BRAIN</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Evidence 03 -->
+    <div class="evidence-card" data-id="03" data-category="COMPARISON">
+      <div class="ev-header">
+        <span class="ev-number">EXHIBIT #03</span>
+        <span class="ev-status ev-active">ACTIVE</span>
+      </div>
+      <div class="ev-image-wrap" onclick="openModal(2)">
+        <div class="ev-scan-effect"></div>
+        <img src="img/page3.jpg" alt="Hemorrhage Type Comparison Table" loading="lazy"/>
+        <div class="ev-overlay">
+          <span class="zoom-icon">⊕ EXAMINE</span>
+        </div>
+        <div class="ev-corner tl"></div>
+        <div class="ev-corner tr"></div>
+        <div class="ev-corner bl"></div>
+        <div class="ev-corner br"></div>
+      </div>
+      <div class="ev-meta">
+        <div class="ev-title">DIFFERENTIAL COMPARISON MATRIX</div>
+        <div class="ev-tags">
+          <span class="tag">COMPARISON</span>
+          <span class="tag">ALL TYPES</span>
+          <span class="tag">MECHANISM</span>
+        </div>
+        <div class="ev-coords">
+          <span>SERIES: ICH-DIFF-011</span>
+          <span>FORMAT: TABLE</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Evidence 04 -->
+    <div class="evidence-card" data-id="04" data-category="AI CLASSIFICATION">
+      <div class="ev-header">
+        <span class="ev-number">EXHIBIT #04</span>
+        <span class="ev-status ev-processing">PROCESSING</span>
+      </div>
+      <div class="ev-image-wrap" onclick="openModal(3)">
+        <div class="ev-scan-effect"></div>
+        <img src="img/page4.jpg" alt="AI Classification Pipeline" loading="lazy"/>
+        <div class="ev-overlay">
+          <span class="zoom-icon">⊕ EXAMINE</span>
+        </div>
+        <div class="ev-corner tl"></div>
+        <div class="ev-corner tr"></div>
+        <div class="ev-corner bl"></div>
+        <div class="ev-corner br"></div>
+      </div>
+      <div class="ev-meta">
+        <div class="ev-title">ML CLASSIFICATION PIPELINE</div>
+        <div class="ev-tags">
+          <span class="tag">AI/ML</span>
+          <span class="tag">PIPELINE</span>
+          <span class="tag">FEATURE EXTRACTION</span>
+        </div>
+        <div class="ev-coords">
+          <span>SERIES: ICH-ML-019</span>
+          <span>ACCURACY: PENDING</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ ANALYSIS SECTION ═══ -->
+<section id="analysis" class="section">
+  <div class="section-header">
+    <div class="section-tag">SECTION 03</div>
+    <h2 class="section-title">FORENSIC <span class="accent">ANALYSIS</span></h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="analysis-grid">
+
+    <div class="analysis-item">
+      <div class="analysis-badge">TYPE I</div>
+      <h3 class="analysis-type">EPIDURAL HEMATOMA</h3>
+      <div class="analysis-body">
+        <div class="finding-row">
+          <span class="finding-label">CT SHAPE</span>
+          <span class="finding-val">Biconvex / Lenticular</span>
+        </div>
+        <div class="finding-row">
+          <span class="finding-label">BLEED SOURCE</span>
+          <span class="finding-val accent-red">ARTERIAL (Middle Meningeal A.)</span>
+        </div>
+        <div class="finding-row">
+          <span class="finding-label">DENSITY</span>
+          <span class="finding-val">Hyperdense (60–90 HU)</span>
+        </div>
+        <div class="finding-row">
+          <span class="finding-label">CLASSIC SIGN</span>
+          <span class="finding-val">Lucid interval → rapid deterioration</span>
+        </div>
+        <div class="finding-row">
+          <span class="finding-label">ETIOLOGY</span>
+          <span class="finding-val">Temporal bone fracture → arterial tear</span>
+        </div>
+        <div class="risk-bar">
+          <span class="risk-label">MORTALITY RISK</span>
+          <div class="risk-track">
+            <div class="risk-fill" style="width:25%; --rc:#e67e22;"></div>
+          </div>
+          <span class="risk-pct">~25%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="analysis-item">
+      <div class="analysis-badge">TYPE II</div>
+      <h3 class="analysis-type">SUBDURAL HEMATOMA</h3>
+      <div class="analysis-body">
+        <div class="finding-row">
+          <span class="finding-label">CT SHAPE</span>
+          <span class="finding-val">Crescent / "Banana"</span>
+        </div>
+        <div class="finding-row">
+          <span class="finding-label">BLEED SOURCE</span>
+          <span class="finding-val">VENOUS (Bridging veins)</span>
+        </div>
+        <div class="finding-row">
+          <span class="finding-label">DENSITY</span>
+          <span class="finding-val">Acute: Hyperdense | Chronic: Hypodense</span>
+        </div>
+        <div class="finding-row">
+          <span class="finding-label">CLASSIC SIGN</span>
+          <span class="finding-val">Midline shift, conforms to brain</span>
+        </div>
+        <div class="finding-row">
+          <span class="finding-label">ETIOLOGY</span>
+          <span class="finding-val">Trauma, anticoagulation, elderly falls</span>
+        </div>
+        <div class="risk-bar">
+          <span class="risk-label">MORTALITY RISK</span>
+          <div class="risk-track">
+            <div class="risk-fill" style="width:40%; --rc:#e74c3c;"></div>
+          </div>
+          <span class="risk-pct">~40%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="analysis-item">
+      <div class="analysis-badge">TYPE III</div>
+      <h3 class="analysis-type">SUBARACHNOID HEMORRHAGE</h3>
+      <div class="analysis-body">
+        <div class="finding-row">
+          <span class="finding-label">CT SHAPE</span>
+          <span class="finding-val">Sulcal / Cisternal filling</span>
+        </div>
+        <div class="finding-row">
+          <span class="finding-label">BLEED SOURCE</span>
+          <span class="finding-val accent-red">ARTERIAL (Aneurysm rupture)</span>
+        </div>
+        <div class="finding-row">
+          <span class="finding-label">DENSITY</span>
+          <span class="finding-val">Hyperdense sulci & basal cisterns</span>
+        </div>
+        <div class="finding-row">
+          <span class="finding-label">CLASSIC SIGN</span>
+          <span class="finding-val">"Thunderclap" — worst headache of life</span>
+        </div>
+        <div class="finding-row">
+          <span class="finding-label">ETIOLOGY</span>
+          <span class="finding-val">Berry aneurysm rupture, AVM</span>
+        </div>
+        <div class="risk-bar">
+          <span class="risk-label">MORTALITY RISK</span>
+          <div class="risk-track">
+            <div class="risk-fill" style="width:50%; --rc:#c0392b;"></div>
+          </div>
+          <span class="risk-pct">~50%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="analysis-item">
+      <div class="analysis-badge">TYPE IV</div>
+      <h3 class="analysis-type">INTRAPARENCHYMAL</h3>
+      <div class="analysis-body">
+        <div class="finding-row">
+          <span class="finding-label">CT SHAPE</span>
+          <span class="finding-val">Rounded, irregular hematoma</span>
+        </div>
+        <div class="finding-row">
+          <span class="finding-label">BLEED SOURCE</span>
+          <span class="finding-val">Arterial or venous</span>
+        </div>
+        <div class="finding-row">
+          <span class="finding-label">DENSITY</span>
+          <span class="finding-val">Hyperdense mass within parenchyma</span>
+        </div>
+        <div class="finding-row">
+          <span class="finding-label">CLASSIC SIGN</span>
+          <span class="finding-val">Perilesional edema, mass effect</span>
+        </div>
+        <div class="finding-row">
+          <span class="finding-label">ETIOLOGY</span>
+          <span class="finding-val">HTN, AVM, tumor, coagulopathy</span>
+        </div>
+        <div class="risk-bar">
+          <span class="risk-label">MORTALITY RISK</span>
+          <div class="risk-track">
+            <div class="risk-fill" style="width:52%; --rc:#922b21;"></div>
+          </div>
+          <span class="risk-pct">~52%</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ CONCLUSION ═══ -->
+<section id="conclusion" class="section">
+  <div class="section-header">
+    <div class="section-tag">SECTION 04</div>
+    <h2 class="section-title">CASE <span class="accent">CONCLUSION</span></h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="conclusion-wrap">
+    <div class="conclusion-stamp">FINDINGS COMPILED</div>
+    <div class="conclusion-body">
+      <div class="conclusion-item">
+        <span class="ci-num">01</span>
+        <div>
+          <strong>CT remains the primary modality</strong> for rapid identification of intracranial hemorrhage in emergency settings. Non-contrast CT has near-100% sensitivity in the acute phase (&lt;24 hours).
+        </div>
+      </div>
+      <div class="conclusion-item">
+        <span class="ci-num">02</span>
+        <div>
+          <strong>Morphological pattern recognition</strong> on CT — shape, location, density, and mass effect — is the cornerstone of forensic radiological differentiation between hemorrhage subtypes.
+        </div>
+      </div>
+      <div class="conclusion-item">
+        <span class="ci-num">03</span>
+        <div>
+          <strong>Mechanism of injury</strong> directly determines hemorrhage type: arterial pressure produces epidural/SAH; venous bridging vein rupture causes subdural; hypertension damages small perforators causing basal ganglia bleeds.
+        </div>
+      </div>
+      <div class="conclusion-item">
+        <span class="ci-num">04</span>
+        <div>
+          <strong>Machine learning classification pipelines</strong>, as demonstrated in Exhibit #04, represent the frontier of automated hemorrhage detection, with modern models achieving &gt;90% AUC across hemorrhage categories.
+        </div>
+      </div>
+      <div class="conclusion-item">
+        <span class="ci-num">05</span>
+        <div>
+          <strong>Immediate clinical correlation</strong> with GCS, pupillary response, and hemodynamic status remains essential. Radiological evidence alone is insufficient for management decision without clinical context.
+        </div>
+      </div>
+    </div>
+
+    <div class="verdict-box">
+      <div class="verdict-label">▸ FORENSIC DETERMINATION</div>
+      <p class="verdict-text">Based on analysis of all submitted radiological exhibits, intracranial hemorrhage subtypes demonstrate characteristic CT signatures enabling definitive classification. Early identification and subtype differentiation are critical determinants of patient outcome. Case evidence supports immediate neurosurgical consultation protocol.</p>
+      <div class="verdict-sig">
+        <span>CASE FILE #ICH-2024-001</span>
+        <span>STATUS: <span class="accent">CLOSED — FINDINGS LOGGED</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">ICH//FORENSICS</div>
+    <p class="footer-note">For educational and research purposes only. Not for clinical use.<br/>All CT imagery sourced from open academic publications.</p>
+    <div class="footer-bar">
+      <span>CASE FILE #ICH-2024-001</span>
+      <span>MEDICAL FORENSICS DIVISION</span>
+      <span>ENCRYPTED ▸ AES-256</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ MODAL ═══ -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <span class="modal-exhibit" id="modalExhibit">EXHIBIT #01</span>
+      <button class="modal-close" onclick="closeModal()">✕ CLOSE</button>
+    </div>
+    <div class="modal-img-wrap">
+      <div class="modal-scan-bar"></div>
+      <img id="modalImg" src="" alt="Evidence Image"/>
+      <div class="modal-reticle"></div>
+    </div>
+    <div class="modal-footer">
+      <span id="modalTitle" class="modal-title-text">—</span>
+      <div class="modal-nav">
+        <button onclick="prevEvidence()">◀ PREV</button>
+        <button onclick="nextEvidence()">NEXT ▶</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
